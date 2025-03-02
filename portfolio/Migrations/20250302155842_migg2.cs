@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace portfolio.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class migg2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,7 +49,8 @@ namespace portfolio.Migrations
                 name: "Experiences",
                 columns: table => new
                 {
-                    ExperienceId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ExperienceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Head = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<string>(type: "nvarchar(max)", nullable: false),

@@ -12,8 +12,8 @@ using portfolio.DAL.Context;
 namespace portfolio.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    [Migration("20250226130105_mig1")]
-    partial class mig1
+    [Migration("20250302155842_migg2")]
+    partial class migg2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,8 +93,11 @@ namespace portfolio.Migrations
 
             modelBuilder.Entity("portfolio.DAL.Entities.Experience", b =>
                 {
-                    b.Property<string>("ExperienceId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ExperienceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExperienceId"));
 
                     b.Property<string>("Date")
                         .IsRequired()

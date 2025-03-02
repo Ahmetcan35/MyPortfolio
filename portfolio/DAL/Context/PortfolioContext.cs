@@ -7,7 +7,7 @@ namespace portfolio.DAL.Context
     {
         override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-DCA5812;initial Catalog=MyPortfolioDb;integrated Security=true; TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-DCA5812;initial Catalog=NewMyPortfolioDb;integrated Security=true; TrustServerCertificate=true");
         }
 
 
